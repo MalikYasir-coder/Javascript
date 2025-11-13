@@ -26,7 +26,7 @@
 <body>
     <h1>Welcome to javascript</h1>
     <div id="Firstcontainer" class="container">
-        <button id="Click">Click Me</button>
+        <button id="Click"  onclick="clicked()">Click Me</button>
         <p>this ia a basic para</p>
     </div>
     <div class="container">
@@ -59,5 +59,25 @@ console.log(tn);
  createdelement = document.createElement("p");
  createdelement.innerText = ("This ia a second para");
 tn[0].appendChild(createdelement);
+// for replacing child
+ createdelement1 = document.createElement("p");
+ createdelement1.innerText = ("This ia a third para");
+tn[0].replaceChild(createdelement1,createdelement);
+// removes the child
+// removechild("element") ----removes the Element
+// selecting using query
+sel = document.querySelector(".container");
+console.log(sel);
+sel = document.querySelectorAll(".container");
+console.log(sel);
+// Events in javascript
+function clicked(){
+    console.log("The button was clicked");
+}
+window.onload = function(){
+    console.log("The page is loaded");
+}
+
+
 </script>
 </html>
