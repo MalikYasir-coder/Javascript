@@ -52,6 +52,12 @@ elemclass[0].innerHTML;
 console.log(elemclass);
 elemclass[0].innerText;
 console.log(elemclass);
-
+// by tagname
+let tn = document.getElementsByTagName("button");
+console.log(tn);
+// how to add child in any div
+ createdelement = document.createElement("p");
+ createdelement.innerText = ("This ia a second para");
+tn[0].appendChild(createdelement);
 </script>
 </html>
