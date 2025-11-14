@@ -1,32 +1,37 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <style>
-        *{
+        * {
             margin: 0;
             padding: 0;
         }
-        .container{
-            border: 2px solid  red;
-            margin:  3px 0;
+
+        .container {
+            border: 2px solid red;
+            margin: 3px 0;
             background-color: antiquewhite;
             padding: 9px;
         }
-        .bg-primary{
+
+        .bg-primary {
             background-color: rebeccapurple;
         }
-        .Text-success{
+
+        .Text-success {
             color: white;
         }
     </style>
 </head>
+
 <body>
     <h1>Welcome to javascript</h1>
     <div id="Firstcontainer" class="container">
-        <button id="Click"  onclick="clicked()">Click Me</button>
+        <button id="Click" onclick="clicked()">Click Me</button>
         <p>this ia a basic para</p>
     </div>
     <div class="container">
@@ -34,50 +39,70 @@
     </div>
 </body>
 <script>
-// DOM manipulation (by ID)
-let elem = document.getElementById("Click");
-console.log(elem);
-// (by CLASS)
-let elemclass = document.getElementsByClassName("container");
-console.log(elemclass);
-// for changing background color of Any Index
-// elemclass[0].style.background = "yellow";
-// for Adding class list in any container
-elemclass[0].classList.add("bg-primary");
-elemclass[0].classList.add("Text-success");
-// we can also remove class by simply according to adding class method
-elemclass[0].classList.remove("Text-success");
-// For knowing whats inside the html
-elemclass[0].innerHTML;
-console.log(elemclass);
-elemclass[0].innerText;
-console.log(elemclass);
-// by tagname
-let tn = document.getElementsByTagName("button");
-console.log(tn);
-// how to add child in any div
- createdelement = document.createElement("p");
- createdelement.innerText = ("This ia a second para");
-tn[0].appendChild(createdelement);
-// for replacing child
- createdelement1 = document.createElement("p");
- createdelement1.innerText = ("This ia a third para");
-tn[0].replaceChild(createdelement1,createdelement);
-// removes the child
-// removechild("element") ----removes the Element
-// selecting using query
-sel = document.querySelector(".container");
-console.log(sel);
-sel = document.querySelectorAll(".container");
-console.log(sel);
-// Events in javascript
-function clicked(){
-    console.log("The button was clicked");
-}
-window.onload = function(){
-    console.log("The page is loaded");
-}
+    // DOM manipulation (by ID)
+    let elem = document.getElementById("Click");
+    console.log(elem);
+    // (by CLASS)
+    let elemclass = document.getElementsByClassName("container");
+    console.log(elemclass);
+    // for changing background color of Any Index
+    // elemclass[0].style.background = "yellow";
+    // for Adding class list in any container
+    elemclass[0].classList.add("bg-primary");
+    elemclass[0].classList.add("Text-success");
+    // we can also remove class by simply according to adding class method
+    elemclass[0].classList.remove("Text-success");
+    // For knowing whats inside the html
+    elemclass[0].innerHTML;
+    console.log(elemclass);
+    elemclass[0].innerText;
+    console.log(elemclass);
+    // by tagname
+    let tn = document.getElementsByTagName("button");
+    console.log(tn);
+    // how to add child in any div
+    createdelement = document.createElement("p");
+    createdelement.innerText = ("This ia a second para");
+    tn[0].appendChild(createdelement);
+    // for replacing child
+    createdelement1 = document.createElement("p");
+    createdelement1.innerText = ("This ia a third para");
+    tn[0].replaceChild(createdelement1, createdelement);
+    // removes the child
+    // removechild("element") ----removes the Element
+    // selecting using query
+    sel = document.querySelector(".container");
+    console.log(sel);
+    sel = document.querySelectorAll(".container");
+    console.log(sel);
+    // functions in javascript
+    function clicked() {
+        console.log("The button was clicked");
+    }
+    window.onload = function () {
+        console.log("The page is loaded");
+    }
+    // EventsListeners in javascript
+    Firstcontainer.addEventListener("click", function () {
+        console.log("event listener is working")
+    })
+    Firstcontainer.addEventListener("mouseover", function () {
+        console.log("mouse over is working")
+    })
+    Firstcontainer.addEventListener("mouseout" , function(){
+        console.log("mouse out is working")
+    }) 
+    Firstcontainer.addEventListener("mouseup" , function(){
+        console.log("mouseup is working")
+    })
+    Firstcontainer.addEventListener("mousedown" , function(){
+        console.log("mousedown is working")
+    })
+
+
+
 
 
 </script>
+
 </html>
