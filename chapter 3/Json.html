@@ -13,9 +13,14 @@
 <script>
     JSON
     // java script object notation 
+    // converting object into stringify(JSON)
+    // double quote is must
     obj = {name: "Malik", length:2}
     jso = JSON.stringify(obj);
     console.log(jso);
+    // Now converting stringify into Object
+    parsed = JSON.parse(`{"name":"Malik","length":2}`);
+    console.log(parsed);
 
 </script>
 </html>
