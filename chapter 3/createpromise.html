@@ -1,0 +1,47 @@
+<DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+<script>
+    const cart =["shoes","pants","kurta"];
+    const orderPromise= createOrder(cart); //order Id
+    orderPromise.then(function(orderId){
+        console.log(orderId)
+        // proceedtopayment(orderId)
+    })
+
+
+    ////
+    //producer end code 
+    function createOrder(cart){
+
+
+        const pr =new Promise((resolve, reject) => {
+
+            if(!validatecart(cart)){
+                const err =new Error("cart is not valid");
+                reject(err);
+                
+            }
+            
+                const orderId="12345"
+                resolve(orderId);
+            
+            
+        })
+
+
+        return pr;
+    }
+    function validatecart(cart){
+        return true;
+    }
+
+</script>
+</html>
