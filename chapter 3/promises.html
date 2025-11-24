@@ -1,25 +1,40 @@
 <DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    
-</body>
-<script>
-    // const cart =["shoes","pants","watch"];
+    <html lang="en">
 
-    // createOrder(cart, function (orderId) {
-    //     proceedToPayment(orderId);
-    // });
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+    </head>
 
-    // const promise = createOrder(cart);
+    <body>
 
-    // promise.then( function (orderId) {
-    //     proceedToPayment(orderId);
-    // });
-    
-</script>
-</html>
+    </body>
+    <script>
+        const cart = ["shoes", "pants", "watch"];
+
+        // createOrder(cart, function (orderId) {
+        //     proceedToPayment(orderId);
+        // });
+
+        const promise = createOrder(cart);
+
+        promise.then(function (orderId) {
+             return proceedToPayment(orderId);
+        });
+        promise.then(function (paymentinfo) {
+          return  showsummary(paymentinfo);
+        })
+        promise.then(function(paymentinfo){
+           return updatewallet(paymentinfo)
+        })
+        // const GITHUBAPI = "https://api.github.com/users/MalikYasir-coder";
+        // // debugger;
+        //  const user = fetch(GITHUBAPI);
+        //  console.log(user);
+        //  user.then(function(data){
+        //     console.log(data);
+        //  })
+    </script>
+
+    </html>
