@@ -14,6 +14,11 @@
     orderPromise.then(function(orderId){
         console.log(orderId)
         // proceedtopayment(orderId)
+        // for handling errors we use .catch() function
+        
+    })
+    .catch(function(err){
+        console.log(err.message);
     })
 
 
@@ -40,8 +45,9 @@
         return pr;
     }
     function validatecart(cart){
-        return true;
+        return false;
     }
+    //for promise rejection we edit the return to false
 
 </script>
 </html>
