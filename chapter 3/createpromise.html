@@ -13,13 +13,34 @@
     const orderPromise= createOrder(cart); //order Id
     orderPromise.then(function(orderId){
         console.log(orderId)
+        return(orderId);
+    })
+        .catch(function(err){
+            console.log(err.message);
+        })
+
+        
+       
+    
+    
+
         // proceedtopayment(orderId)
         // for handling errors we use .catch() function
         
+    
+    .then(function(orderId){
+       return proceedtopayment(orderId)
+    })
+    .then(function(paymentinfo){
+        console.log(paymentinfo)
     })
     .catch(function(err){
         console.log(err.message);
     })
+    .then(function(orderId){
+        console.log("messages done")
+     })
+
 
 
     ////
@@ -43,6 +64,12 @@
 
 
         return pr;
+    }
+    function proceedtopayment(orderId){
+        return new Promise((resolve, reject) => {
+            resolve("payment successful")
+        })
+
     }
     function validatecart(cart){
         return false;
