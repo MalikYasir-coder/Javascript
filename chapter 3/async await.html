@@ -21,6 +21,8 @@
     // datapromise.then(res => console.log(res));
     // Async and await combo is used for handling promises
     // Await is a keyword that can only be used inside async function
+    // when await is used then (.then()) is not used because await only used in async function 
+    // and in simple function .then() is used
      const p =new Promise((resolve, reject) => {
         setTimeout(() => {
              resolve("resolve value get fulfilled promise")
@@ -28,16 +30,18 @@
         }, 10000);
         
     })
-    // async function handlepromise() {
-    //     const val=await p;
-    //     console.log(val);
-    // }
-    // handlepromise()
-    function getData(){
-        p.then((res) =>console.log(res));
-        //JS engine will not wait for promise to be resolved
-        console.log("my practice of JSON")
+    // js egine is waiting for promise to be resolved in async await function
+    async function handlepromise() {
+        const val=await p;
+        console.log("thfjdldldld")
+        console.log(val);
     }
-    getData()
+    handlepromise()
+    // function getData(){
+    //     p.then((res) =>console.log(res));
+        //JS engine will not wait for promise to be resolved
+    //     console.log("my practice of JSON")
+    // }
+    // getData()
 </script>
 </html>
