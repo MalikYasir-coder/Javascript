@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+<script>
+    // async function always return a promise if we return a value e.g numerical value or string etc then async function auto wrap the value in promise and return a promise because it always returns a promise
+    // const p=new Promise((resolve, reject) => {
+    //     resolve("resolve value get fulfilled")
+    // })
+
+    // async function getData() {
+    //     return p
+    // }
+    // const datapromise = getData();
+    // datapromise.then(res => console.log(res));
+    // Async and await combo is used for handling promises
+    // Await is a keyword that can only be used inside async function
+     const p =new Promise((resolve, reject) => {
+        setTimeout(() => {
+             resolve("resolve value get fulfilled promise")
+            
+        }, 10000);
+        
+    })
+    // async function handlepromise() {
+    //     const val=await p;
+    //     console.log(val);
+    // }
+    // handlepromise()
+    function getData(){
+        p.then((res) =>console.log(res));
+        //JS engine will not wait for promise to be resolved
+        console.log("my practice of JSON")
+    }
+    getData()
+</script>
+</html>
