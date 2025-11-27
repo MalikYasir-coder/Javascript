@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+<script>
+    // in async await we use try catch method for error handling
+    
+    const API_URL= "https://api.github.com/users/MalikYasir-coder"
+    async function handlepromise() {
+        try{
+             //fetch function gives us a response
+        const data = await fetch(API_URL)
+        // if we want result in JSON then we do this
+        const  jsonvalue = await data.json()
+        console.log(jsonvalue);
+        }
+       catch(err){
+        console.log(err)
+       }
+        
+
+    }
+    handlepromise()
+</script>
+</html>
